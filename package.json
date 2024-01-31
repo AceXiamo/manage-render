@@ -1,9 +1,10 @@
 {
-  "name": "@axm/manage-render",
+  "name": "@axm-pack/manage-render",
   "version": "0.0.1",
   "description": "about vue3 with element-plus",
   "author": "AceXiamo <xiamo@qwq.link>",
   "license": "MIT",
+  "repository": "https://github.com/AceXiamo/manage-render",
   "type": "module",
   "main": "./index.cjs",
   "module": "./index.mjs",
