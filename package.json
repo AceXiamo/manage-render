@@ -6,9 +6,9 @@
   "license": "MIT",
   "repository": "https://github.com/AceXiamo/manage-render",
   "type": "module",
-  "main": "./index.cjs",
-  "module": "./index.mjs",
-  "types": "./index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
