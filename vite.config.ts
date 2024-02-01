@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import UnoCSS from 'unocss/vite'
 
 import { resolve } from 'path'
 
@@ -11,6 +12,7 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   plugins: [
     vue(),
+    UnoCSS(),
     dts({
       entryRoot: './src',
       tsconfigPath: './tsconfig.json',
@@ -35,14 +37,14 @@ export default defineConfig({
         {
           format: 'es',
           entryFileNames: '[name].mjs',
-          preserveModules: true,
+          // preserveModules: true,
           exports: 'named',
           dir: './package/dist'
         },
         {
           format: 'cjs',
           entryFileNames: '[name].js',
-          preserveModules: true,
+          // preserveModules: true,
           exports: 'named',
           dir: './package/dist'
         }
