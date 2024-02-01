@@ -16,7 +16,6 @@ export default defineConfig({
       tsconfigPath: './tsconfig.json',
       outDir: './package/dist'
     }),
-    ,
     vueJsx()
   ],
   resolve: {

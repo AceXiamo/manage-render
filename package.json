@@ -1,7 +1,7 @@
 {
   "name": "@axm-pack/manage-render",
-  "version": "0.0.3",
-  "description": "about vue3 with element-plus",
+  "version": "0.0.4",
+  "description": "vue3 with element-plus",
   "author": "AceXiamo <xiamo@qwq.link>",
   "license": "MIT",
   "repository": "https://github.com/AceXiamo/manage-render",
@@ -12,8 +12,7 @@
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.mjs"
     }
   },
   "scripts": {
