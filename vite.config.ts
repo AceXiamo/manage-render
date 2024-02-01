@@ -12,13 +12,13 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   plugins: [
     vue(),
+    vueJsx(),
     UnoCSS(),
     dts({
       entryRoot: './src',
       tsconfigPath: './tsconfig.json',
       outDir: './package/dist'
     }),
-    vueJsx()
   ],
   resolve: {
     alias: {
