@@ -27,7 +27,7 @@
         @click="leave"
     >
         <div
-            class="bg-white min-h-[100px] h-max flex flex-col rounded-md py-[20px] gap-[20px] absolute inset-0 m-[100px_auto]"
+            class="bg-white dark:bg-[#141414] min-h-[100px] h-max flex flex-col rounded-md py-[20px] gap-[20px] absolute inset-0 m-[100px_auto]"
             :style="{ width: typeof $props.width === 'number' ? `${$props.width}px` : $props.width }"
             @click.stop
         >
