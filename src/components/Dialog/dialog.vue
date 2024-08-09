@@ -32,7 +32,7 @@
             @click.stop
         >
             <div class="flex items-center px-[20px]">
-                <span class="text-[#333] font-bold text-[15px] select-none">{{ $props.title }}</span>
+                <span class="text-[#333] dark:text-white font-bold text-[15px] select-none">{{ $props.title }}</span>
                 <div class="ml-auto cursor-pointer" @click="leave">
                     <el-icon :size="24" color="#E74745">
                         <CircleCloseFilled />
