@@ -58,8 +58,6 @@ const init = (props: DialogProps, onClose?: () => void): DialogInstance => {
         motionKey,
     })
     vNode.appContext = appContext
-    console.log(vNode)
-    console.log(render)
     render(vNode, div)
     hooks.push({
         key: motionKey,
