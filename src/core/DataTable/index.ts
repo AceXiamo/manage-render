@@ -16,6 +16,8 @@ export type TableDefine<T> = {
   height?: string | number
   /** The columns to display in the table. */
   columns?: ColumnItem<T>[]
+  /** A function to handle the click event for a row in the table. */
+  rowClick?: (row: T) => void
   /** The action to display for each row in the table. */
   action?: {
     /** The label to display for the action. */
@@ -25,7 +27,7 @@ export type TableDefine<T> = {
     /** The actions to display for the action. */
     items?: {
       /** The text to display for the action. */
-      text?: string
+      text?: string | ((item: T) => string)
       /** The type of button to display for the action. */
       type?: 'default' | 'primary' | 'success' | 'warning' | 'info' | 'danger'
       /** The icon to display for the action. */
@@ -41,16 +43,17 @@ export type TableDefine<T> = {
   /** The pagination settings for the table. */
   pagination?: {
     /** Whether to display the pagination controls. */
-    show: boolean
+    show?: boolean
+    /** The current page number. */
+    pageNum?: () => number
     /** The number of items to display per page. */
-    pageSize?: number
+    pageSize?: () => number
     /** The available page sizes to choose from. */
     pageSizes?: number[]
   }
   /** A function to fetch data for the table. */
   dataFetch?: (pageNum: number, pageSize: number) => void
 }
-
 
 /**
  * Represents a column item in a data table.

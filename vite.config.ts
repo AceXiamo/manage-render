@@ -1,24 +1,22 @@
 import { fileURLToPath, URL } from 'node:url'
-
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import UnoCSS from 'unocss/vite'
-
-import { resolve } from 'path'
-
 import dts from 'vite-plugin-dts'
+import postcss from 'rollup-plugin-postcss'
+import Unocss from 'unocss/vite'
 
 export default defineConfig({
   plugins: [
     vue(),
+    Unocss(),
     vueJsx(),
-    UnoCSS(),
     dts({
       entryRoot: './src',
       tsconfigPath: './tsconfig.json',
       outDir: './package/dist'
-    }),
+    })
   ],
   resolve: {
     alias: {
@@ -32,6 +30,13 @@ export default defineConfig({
       fileName: '@axm/manage-render'
     },
     rollupOptions: {
+      plugins: [
+        postcss({
+          plugins: [],
+          inject: true,
+          extract: false
+        })
+      ],
       external: ['vue', 'element-plus'],
       output: [
         {
@@ -49,6 +54,7 @@ export default defineConfig({
           dir: './package/dist'
         }
       ]
-    }
+    },
+    cssCodeSplit: false
   }
 })

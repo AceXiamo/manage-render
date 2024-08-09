@@ -1,4 +1,4 @@
-import { h, VNode } from 'vue'
+import { h, Ref, VNode } from 'vue'
 import QueuryForm from '@/core/QueryForm/index.vue'
 import useTextField from '@/core/FormFields/useTextField'
 
@@ -27,7 +27,7 @@ export type FormDefine<T> = {
  */
 export type FormItem<T, K = keyof T> = {
   /** The type of the form item. */
-  type?: VNode
+  type?: VNode | (() => VNode)
   /** The key of the form item. */
   key?: K
   /** The label of the form item. */

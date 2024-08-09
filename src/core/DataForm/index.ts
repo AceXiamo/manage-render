@@ -25,11 +25,12 @@ export type FormDefine<T> = {
 export type FormItem<T, K = keyof T> = {
   label?: string
   key?: K
-  type?: VNode
+  type?: VNode | (() => VNode)
   readonly?: boolean
   rules?: any
   col?: number
   rowEnd?: boolean
+  remark?: string
   show?: (item: T) => boolean
 }
 
