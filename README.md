@@ -5,7 +5,7 @@
 [![GitHub](https://img.shields.io/github/issues/AceXiamo/manage-render)](https://github.com/AceXiamo/manage-render/issues)
 [![GitHub](https://img.shields.io/github/stars/AceXiamo/manage-render)](https://github.com/AceXiamo/manage-render)
 
-基于 ElementPlus 的 `CRUD` 构造器，通过 JSON & JSX 配置，实现快速构建管理系统页面。
+基于 ElementPlus 的 `CRUD` 构造器。
 
 ![](./assets/screenshot/5951723473367_.pic_hd.jpg)
 
