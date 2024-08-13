@@ -5,30 +5,30 @@
 [![GitHub](https://img.shields.io/github/issues/AceXiamo/manage-render)](https://github.com/AceXiamo/manage-render/issues)
 [![GitHub](https://img.shields.io/github/stars/AceXiamo/manage-render)](https://github.com/AceXiamo/manage-render)
 
-English | [简体中文](./README.zh-CN.md)
+[English](./README.md) | 简体中文
 
-A `CRUD` constructor based on ElementPlus.
+基于 ElementPlus 的 `CRUD` 构造器。
 
 ![](./assets/screenshot/5951723473367_.pic_hd.jpg)
 
-> Using JSX requires the installation of the `@vitejs/plugin-vue-jsx` plugin.
+> 使用 JSX 的前提是需要安装 `@vitejs/plugin-vue-jsx` 插件。
 
-## Installation
+## 安装
 
 ```bash
 pnpm i @axm-pack/manage-render
 ```
 
-## Usage
+## 使用
 
 ### Dialog
 
-A very convenient Dialog component
+一个十分方便的 Dialog 组件
 
-- Functional calls
-- Sequential closing & Esc closing
-- Custom content
-- Supports `h()` & `JSX`
+- 函数式调用
+- 顺序关闭 & Esc 关闭
+- 自定义内容
+- 支持 `h()` & `JSX`
 
 ```jsx
 import { defineComponent } from 'vue'
@@ -63,7 +63,7 @@ const show = () => {
 }
 ```
 
-For Vue single file components, you can write like this
+对于 Vue 的单文件组件，可以这样写
 
 ```jsx
 import { Dialog } from '@axm-pack/manage-render'
@@ -88,15 +88,15 @@ const show = () => {
 }
 ```
 
-Here `instance` is a Dialog instance, and you can close the Dialog with `instance.close()`.
+这里的 `instance` 是一个 `Dialog` 实例，可以通过 `instance.close()` 来关闭 Dialog。
 
 ### QueryForm
 
-As the name suggests, it is used to build query forms
+如其名，用于构建查询表单
 
-- Supports custom rendering,  `JSX` & `h()`
-- Includes built-in implementations such as `Input`, `Select`, `DatePicker`, etc.
-- TypeScript support
+- 支持自定义渲染， `JSX` & `h()`
+- 包含内置实现，如 `Input`、`Select`、`DatePicker` 等
+- TS 类型支持
 
 ```jsx
 import { QueryForm } from '@axm-pack/manage-render'
@@ -123,7 +123,7 @@ const QueryFormNode = QueryForm<QueryFormType>({
   ],
   actions: [
      {
-      text: 'Search',
+      text: '查询',
       type: 'primary',
       handler: () => {
         // TODO
@@ -141,19 +141,19 @@ const QueryFormNode = QueryForm<QueryFormType>({
 </template>
 ```
 
-The `type` defaults to a text box and supports customization. The implemented types are:
+`type` 默认为文本框，支持自定义，已实现的类型:
 
-- `useTextField` Text box
-- `useSelectorField` Dropdown box
-- `useDatePickerField` Date picker
-- `useDateRangePickerField` Date range picker
-- `useCascaderField` Cascader
+- `useTextField` 文本框
+- `useSelectorField` 下拉框
+- `useDatePickerField` 日期选择器
+- `useDateRangePickerField` 日期范围选择器
+- `useCascaderField` 级联选择器
 
-All are ElementPlus components, and specific `Props` and `Events` can be referenced in the ElementPlus documentation.
+均为 ElementPlus 的组件，具体的 `Props`, `Events` 可以参考 ElementPlus 的文档。
 
 🔗 [Source Code](https://github.com/AceXiamo/manage-render/tree/main/src/core/FormFields)
 
-#### Type Reference
+#### 类型参照
 
 ```ts
 /**
@@ -205,10 +205,10 @@ export type Actions = {
 
 ### DataTable
 
-Used to build data tables, based on ElementPlus `Table` component
+用于构建数据表格，基于 ElementPlus 的 `Table` 组件
 
-- Supports custom rendering, `JSX` & `h()`
-- TypeScript support
+- 支持自定义渲染， `JSX` & `h()`
+- TS 类型支持
 
 ```jsx
 import { DataTable } from '@axm-pack/manage-render'
@@ -279,7 +279,7 @@ const DataTableNode = DataTable<TableDataType, PageDataType>({
 </template>
 ```
 
-#### ✅ About Row Selection
+#### ✅ 关于勾选行
 
 ```jsx
 import { useSelection } from '@/core/DataTable/fields'
@@ -304,20 +304,20 @@ const DataTableNode = DataTable<TableDataType, PageDataType>({
 })
 ```
 
-The value of `selection` is an array of selected row `id`s
+`selection` 的值为选中行的 `id` 数组
 
-`selection` Type Reference
+`selection` 类型参照
 
 ```ts
 type IProps<T> = {
   selection: Ref<string[]>
   tableData: Ref<T[]>
   field: Extract<keyof T, string>
-  single?: boolean // Whether single selection
+  single?: boolean // 是否单选
 }
 ```
 
-#### Type Reference
+#### 类型参照
 
 ```ts
 /**
@@ -395,12 +395,12 @@ export type ColumnItem<T, K = keyof T> = {
 
 ### DataForm
 
-Used to build data forms, based on ElementPlus `Form` componen
+用于构建数据表单，基于 ElementPlus 的 `Form` 组件
 
-- Supports custom rendering,  `JSX` & `h()`
-- TypeScript support
+- 支持自定义渲染， `JSX` & `h()`
+- TS 类型支持
 
-Essentially similar to `QueryForm`, sharing the implemented components, but with additional parameters, making it more suitable for building data forms
+本质上和 `QueryForm` 差不多，和 `QueryForm` 共用已实现的组件，但是增加了一些参数，更加适用于构建数据表单
 
 ```jsx
 import { DataForm, useTextField } from '@axm-pack/manage-render'
@@ -429,7 +429,7 @@ const DataFormNode = DataForm<FormDataType>({
   ],
   actions: [
      {
-      text: 'Submit',
+      text: '提交',
       type: 'primary',
       handler: () => {
         // TODO
@@ -447,7 +447,7 @@ const DataFormNode = DataForm<FormDataType>({
 </template>
 ```
 
-#### Type Reference
+#### 类型参照
 
 ```ts
 /**
@@ -496,7 +496,7 @@ type ActionItem<T> = {
 }
 ```
 
-#### Using with Dialog
+#### 配合 Dialog 使用
 
 ```jsx
 import { defineComponent, ref, PropType } from 'vue'
@@ -538,7 +538,7 @@ const DialogContent = defineComponent({
       ],
       actions: [
         {
-          text: 'Submit',
+          text: '提交',
           type: 'primary',
           handler: () => {
             // TODO
@@ -571,7 +571,7 @@ const show = ({item} : {item: FormDataType}) => {
 export { show }
 ```
 
-I usually name this kind of component `EditDialog`, and to use it, just call `EditDialog.show({ item })`.
+这种组件我一般会命名为 `EditDialog`, 使用的话则直接调用 `EditDialog.show({ item })` 即可。
 eg.
 
 ```html
