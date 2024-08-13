@@ -9,6 +9,10 @@ English | [简体中文](./README.zh-CN.md)
 
 A `CRUD` constructor based on ElementPlus.
 
+## Playground
+
+🔗 [Demo](https://stackblitz.com/~/github.com/AceXiamo/manage-render-view)
+
 ![](./assets/screenshot/5951723473367_.pic_hd.jpg)
 
 > Using JSX requires the installation of the `@vitejs/plugin-vue-jsx` plugin.
