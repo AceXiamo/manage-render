@@ -53,7 +53,6 @@ const SelectionItem = defineComponent({
             : props.selection.value?.filter(v => v !== props.item[props.field])
         }
       }
-      console.log(selection)
       ctx.emit('change', selection)
     }
 
