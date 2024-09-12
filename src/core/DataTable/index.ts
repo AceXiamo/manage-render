@@ -1,5 +1,6 @@
 import { VNode, h, Ref } from 'vue'
 import DataTable from '@/core/DataTable/index.vue'
+import { ElTable } from 'element-plus'
 
 /**
  * Defines the structure of a table in the DataTable component.
@@ -18,6 +19,8 @@ export type TableDefine<T> = {
   columns?: ColumnItem<T>[]
   /** A function to handle the click event for a row in the table. */
   rowClick?: (row: T) => void
+  /** The key of the row. ( for tree table ) */
+  rowKey?: string
   /** The action to display for each row in the table. */
   action?: {
     /** The label to display for the action. */

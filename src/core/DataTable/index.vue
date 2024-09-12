@@ -5,6 +5,7 @@
       :data="props.items?.value"
       border
       size="small"
+      :row-key="props.rowKey"
       style="width: 100%"
       :height="props.height"
       @rowClick="
@@ -89,15 +90,12 @@ const props = withDefaults(defineProps<TableDefine<any>>(), {
   total: () => ref(0),
   columns: () => [],
   pagination: () => ({
-    show: true,
+    show: true
   }),
   dataFetch: (page: number, pageSize: number) => {
     // TODO
-    console.log(page, pageSize)
-  },
+  }
 })
-
-console.log(props.pagination)
 </script>
 
 <style scoped>
