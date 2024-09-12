@@ -21,6 +21,8 @@ export type TableDefine<T> = {
   rowClick?: (row: T) => void
   /** The key of the row. ( for tree table ) */
   rowKey?: string
+  /** Whether to expand all rows. */
+  expandAll?: boolean
   /** The action to display for each row in the table. */
   action?: {
     /** The label to display for the action. */

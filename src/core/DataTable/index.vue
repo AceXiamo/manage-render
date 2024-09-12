@@ -13,6 +13,7 @@
           props.rowClick && props.rowClick(row)
         }
       "
+      :default-expand-all="props.expandAll"
     >
       <el-table-column
         v-for="(item, index) in props.columns"
