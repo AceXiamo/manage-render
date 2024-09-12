@@ -4,5 +4,6 @@ export { default as QueryForm } from './core/QueryForm'
 export { default as Dialog } from './components/Dialog'
 export { default as Context } from './tools/context'
 export * from './core/FormFields'
+export { appContext } from './tools/context'
 
 import 'uno.css'
