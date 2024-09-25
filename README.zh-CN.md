@@ -23,6 +23,20 @@
 pnpm i @axm-pack/manage-render
 ```
 
+> 在 main.ts 中引入
+
+```ts
+...
+
+import { Context } from '@axm-pack/manage-render'
+import '@axm-pack/manage-render/dist/style.css'
+
+const app = createApp(App)
+app.use(Context)
+
+...
+```
+
 ## 使用
 
 ### Dialog

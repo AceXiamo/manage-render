@@ -23,6 +23,20 @@ A `CRUD` constructor based on ElementPlus.
 pnpm i @axm-pack/manage-render
 ```
 
+> Import in `main.ts`
+
+```ts
+...
+
+import { Context } from '@axm-pack/manage-render'
+import '@axm-pack/manage-render/dist/style.css'
+
+const app = createApp(App)
+app.use(Context)
+
+...
+```
+
 ## Usage
 
 ### Dialog
