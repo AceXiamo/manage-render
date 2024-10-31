@@ -34,7 +34,7 @@
           : typeof $props.width === 'number'
             ? `${$props.width}px`
             : $props.width,
-        height: fullScreen ? '100vh' : 'auto',
+        height: fullScreen ? '100vh' : 'max-content',
         margin: fullScreen ? '0' : '100px auto'
       }"
       @click.stop
